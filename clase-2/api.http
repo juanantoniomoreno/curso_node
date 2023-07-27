@@ -1,0 +1,6 @@
+GET http://localhost:1234/pokemon/ditto
+
+###pokemon
+
+POST http://localhost:1234/pokemon
+Content-Tye: application/json;
