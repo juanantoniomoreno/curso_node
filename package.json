@@ -1,0 +1,33 @@
+{
+  "name": "curso_node",
+  "version": "1.0.0",
+  "description": "Curso de Node de midudev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanantoniomoreno/curso_node.git"
+  },
+  "keywords": [
+    "curso",
+    "node",
+    "nodejs"
+  ],
+  "author": "Juan Antonio Moreno",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanantoniomoreno/curso_node/issues"
+  },
+  "homepage": "https://github.com/juanantoniomoreno/curso_node#readme",
+  "dependencies": {
+    "picocolors": "1.0.0"
+  },
+  "devDependencies": {
+    "semistandard": "^17.0.0"
+  },
+  "eslintConfig": {
+    "extends": "semistandard"
+  }
+}

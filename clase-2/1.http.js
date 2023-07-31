@@ -1,5 +1,6 @@
 const http = require("node:http");
 const fs = require("node:fs");
+const picocolors = require("picocolors");
 
 const desiredPort = process.env.PORT ?? 1234;
 
