@@ -2,6 +2,8 @@ const http = require("node:http");
 
 const fs = require("node:fs");
 
+const dittoJSON = require("./pokemon/ditto");
+
 const desiredPort = process.env.PORT ?? 1234;
 
 const processRequest = (req, res) => {
@@ -17,40 +19,41 @@ const processRequest = (req, res) => {
 
         default:
           res.statusCode = 404;
-          res.setHeader("content-type", "application/json");
-          res.end();
+          res.setHeader("Content-Type", "text/html; charset=utf-8");
+          return res.end("<h1>404</h1>");
       }
       break;
 
     case "POST":
       switch (url) {
         case "/pokemon": {
-          const body = "";
+          let body = "";
           //escuchar data
-          req.on('data', chunk => {
-            body += chunk.toString()
-          })
+          req.on("data", (chunk) => {
+            body += chunk.toString();
+          });
 
-          req.on('end', () => {
+          req.on("end", () => {
             const data = JSON.parse(body);
-            res.writeHead(201, {"content-type", "application/json"});
+            //LLamar DB para guardar la info
+
+            res.writeHead(201, {
+              "Content-Type": "application/json; charset=utf-8",
+            });
 
             data.timestamp = Date.now();
-            res.send();
-          })
+            res.end(JSON.stringify(data));
+          });
 
-          break;
-        }
-
-        case "/otro": {
-          const body = "";
           break;
         }
       }
       break;
 
     default:
-      break;
+      res.statusCode = 404;
+      res.setHeader("Content/Type", "text/plain; charset=utf-8");
+      return res.end("<h1>404</h1>");
   }
 };
 

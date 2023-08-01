@@ -11,6 +11,7 @@ function findAvailabePort(desiredPort) {
       });
     });
 
+    // Si se produce un evento de error
     server.on("error", (err) => {
       if (err.code === "EADDINUSE") {
         findAvailabePort(0).then((port) => resolve(port));
