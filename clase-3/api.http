@@ -9,7 +9,7 @@ GET http://localhost:1234/movies?genre=sci-fi
 
 ### Crear una película  POST
 POST http://localhost:1234/movies
-content-type: application/json
+Content-Type: application/json
 
 {
     "title": "The Godfather",
@@ -21,4 +21,13 @@ content-type: application/json
         "Crime",
         "Drama"
     ]    
+}
+
+### Actualizar película
+
+PATCH http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json
+
+{  
+    "year": 2022
 }
